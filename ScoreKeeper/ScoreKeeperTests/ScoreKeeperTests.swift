@@ -16,9 +16,9 @@ struct ScoreKeeperTests {
              Player(name: "Elisha", score: 0),
              Player(name: "Andre", score: 5),
          ])
-        scoreboard.resetScores(to: newValue)
+        await scoreboard.resetScores(to: newValue)
         
-        for player in scoreboard.players {
+        for player in await scoreboard.players {
             #expect(player.score == newValue)
         }
     }
